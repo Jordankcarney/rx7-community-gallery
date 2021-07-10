@@ -1,0 +1,80 @@
+@font-face {
+    font-family: TypographPro_SemiBold;
+    src: url(/assets/fonts/TypographProSemiBold.ttf);
+  }
+
+body, html {
+    padding: 0;
+    margin: 0;
+    background: #36393F;
+    font-family: TypographPro_SemiBold;
+    text-align: center;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+.caption {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    display: block;
+    width: 100%;
+    z-index: 99;
+    line-height: 1.5rem;
+    bottom: 3px;
+    text-align: center;
+}
+
+.userImg {
+    position: relative;
+}
+
+#containerElmnt {
+
+    -webkit-column-count: 5;
+    -webkit-column-gap:   0px;
+    -moz-column-count:    5;
+    -moz-column-gap:      0px;
+    column-count:         5;
+    column-gap:           5px;  
+    
+
+    padding: 0 1rem;
+
+  }
+  
+  #containerElmnt img {
+    /* Just in case there are inline attributes */
+    width: 100% !important;
+    height: auto !important;
+    padding-top: 5px;
+
+  }
+
+
+  @media (max-width: 1200px) {
+    #containerElmnt {
+    -moz-column-count:    4;
+    -webkit-column-count: 4;
+    column-count:         4;
+    }
+  }
+  @media (max-width: 1000px) {
+    #containerElmnt {
+    -moz-column-count:    3;
+    -webkit-column-count: 3;
+    column-count:         3;
+    }
+  }
+  @media (max-width: 600px) {
+    #containerElmnt {
+    -moz-column-count:    1;
+    -webkit-column-count: 1;
+    column-count:         1;
+    }
+  }
