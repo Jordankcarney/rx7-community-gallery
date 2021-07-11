@@ -9,15 +9,19 @@ async function getRotoJSON() {
         const data = await fetch(`https://zekial.io/rotorbot.json`);
         const allUsers = await data.json();
 
+
         let rotaryUsers = [];
 
         // Filter out users not in set server ID
         Object.entries(allUsers).forEach(element => {
-            if(element[1].Guild === serverID) {
+        
+
+            if(element[1].GID === serverID) {
                 rotaryUsers.push(
                     {
                         "name": element[0],
                         "imgLink": element[1].Link,
+                        "minLink": element[1].minLink,
                     }
                 );
             }
@@ -47,7 +51,7 @@ async function createImageElmnts() {
         elmnt.setAttribute(`href`, user.imgLink)
         elmnt.setAttribute(`id`, user.name);
         elmnt.innerHTML = `
-            <img src="${user.imgLink}">
+            <img src="${user.minLink}">
             <span class="caption">${user.name}</span>
         `;
 
@@ -66,7 +70,6 @@ function insertElements(elementsArray, container) {
     });
 }
 
-createImageElmnts().then(console.log);
 
 createImageElmnts()
     .then(elements => {
